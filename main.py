@@ -5,10 +5,10 @@ RPS = RockPaperScissors()
 
 def startNewGame():
     option = input('Start new game Y/N: ')
-    if option.lower() == 'y':
-        return True
-    else: 
+    if option.lower() == 'n':
         return False
+    else: 
+        return True
 
 def main():
     run = True
