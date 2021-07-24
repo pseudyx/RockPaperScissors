@@ -36,11 +36,11 @@ def printResult(playerChoice, computerChoice):
     Outcomes[playerChoice](computerChoice)
 
 def startNewGame():
-    option = input('Start new game Y/n: ')
-    if option == 'n':
-        return 'n'
+    option = input('Start new game Y/N: ')
+    if option.lower() == 'y':
+        return True
     else: 
-        return 'y'
+        return False
 
 def main():
     run = True
@@ -51,9 +51,8 @@ def main():
 
         printChoices(playerChoice,computerChoice)
         printResult(playerChoice, computerChoice)
-        playerChoice = startNewGame()
-
-        if playerChoice == "n":
+        
+        if not startNewGame():
             run = False
             sys.exit()
 
