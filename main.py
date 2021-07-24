@@ -1,6 +1,13 @@
 import random, sys
 
-Options = ["Rock", "Paper", "Scissors", "Lizzard", "Spock"]
+Options = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+Outcomes = {
+    "Rock": lambda computerChoice : printOutcome('Rock', computerChoice, ['Scissors', 'Lizard'], ['Paper', 'Spock']),
+    "Paper": lambda computerChoice : printOutcome('Paper', computerChoice, ['Rock', 'Spock'], ['Scissors', 'Lizard']),
+    "Scissors": lambda computerChoice : printOutcome('Paper', computerChoice, ['Rock', 'Spock'], ['Scissors', 'Lizard']),
+    "Lizard": lambda computerChoice : printOutcome('Lizard', computerChoice, ['Spock', 'Paper'], ['Scissors', 'Rock']),
+    "Spock": lambda computerChoice : printOutcome('Spock', computerChoice, ['Scissors', 'Rock'], ['Lizard', 'Paper'])
+}
 
 def getComputerChoice():
     return random.choice(Options)
@@ -26,16 +33,7 @@ def printResult(playerChoice, computerChoice):
     if playerChoice == computerChoice:
         print("Draw!")
 
-    if playerChoice == 'Rock':
-        printOutcome('Rock', computerChoice, ['Scissors', 'Lizzard'], ['Paper', 'Spock'])
-    elif playerChoice == "Paper":
-        printOutcome('Paper', computerChoice, ['Rock', 'Spock'], ['Scissors', 'Lizzard'])
-    elif playerChoice == "Scissors":
-        printOutcome('Scissors', computerChoice, ['Paper', 'Lizzard'], ['Spock', 'Rock'])
-    elif playerChoice == "Lizzard":
-        printOutcome('Lizzard', computerChoice, ['Spock', 'Paper'], ['Scissors', 'Rock'])
-    elif playerChoice == "Spock":
-        printOutcome('Spock', computerChoice, ['Scissors', 'Rock'], ['Lizzard', 'Paper'])
+    Outcomes[playerChoice](computerChoice)
 
 def startNewGame():
     option = input('Start new game Y/n: ')
