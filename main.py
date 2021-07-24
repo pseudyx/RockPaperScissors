@@ -54,7 +54,7 @@ def main():
         printChoices(playerChoice,computerChoice)
         printResult(playerChoice, computerChoice)
         
-        if !startNewGame():
+        if not startNewGame():
             run = False
             sys.exit()
 
