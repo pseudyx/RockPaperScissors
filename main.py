@@ -4,7 +4,7 @@ Options = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 Outcomes = {
     "Rock": lambda computerChoice : printOutcome('Rock', computerChoice, ['Scissors', 'Lizard'], ['Paper', 'Spock']),
     "Paper": lambda computerChoice : printOutcome('Paper', computerChoice, ['Rock', 'Spock'], ['Scissors', 'Lizard']),
-    "Scissors": lambda computerChoice : printOutcome('Paper', computerChoice, ['Rock', 'Spock'], ['Scissors', 'Lizard']),
+    "Scissors": lambda computerChoice : printOutcome('Scissors', computerChoice, ['Paper', 'Lizard'], ['Spock', 'Rock']),
     "Lizard": lambda computerChoice : printOutcome('Lizard', computerChoice, ['Spock', 'Paper'], ['Scissors', 'Rock']),
     "Spock": lambda computerChoice : printOutcome('Spock', computerChoice, ['Scissors', 'Rock'], ['Lizard', 'Paper'])
 }
