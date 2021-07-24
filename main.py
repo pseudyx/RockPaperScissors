@@ -39,7 +39,7 @@ def printResult(playerChoice, computerChoice):
 
 def startNewGame():
     option = input('Start new game Y/N: ')
-    if option.lower() == 'n':
+    if option.lower() == 'y':
         return True
     else: 
         return False
@@ -54,7 +54,7 @@ def main():
         printChoices(playerChoice,computerChoice)
         printResult(playerChoice, computerChoice)
         
-        if startNewGame():
+        if !startNewGame():
             run = False
             sys.exit()
 
